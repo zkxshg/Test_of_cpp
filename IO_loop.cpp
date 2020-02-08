@@ -106,7 +106,7 @@ int demo52_2()
 
 int demo52_1()
 {
-    // gin in loop
+    // cin in loop
     char ch;
     int counter = 0;
     cout << "Enter characters. Enter # to exist: \n";
