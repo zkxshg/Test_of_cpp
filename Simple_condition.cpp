@@ -182,6 +182,7 @@ int demo6_3()
     cout << "my favorite number: ";
     int Fave = 21;
     int n;
+    // if-else else-if
     do
     {
         cin >> n;
