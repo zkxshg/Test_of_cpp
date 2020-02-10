@@ -74,7 +74,6 @@ int main()
 
 // ===============================================================
 // recursive
-
 int demo7_13()
 {
     int len;
@@ -83,28 +82,24 @@ int demo7_13()
     array<int, ArSize> fiboarr;
     fiboarr[len - 1] = fibo(len-1, &fiboarr);
     cout << "The fibo array are: " << endl;
-    //showfibo(fiboarr, len);
-    for (int i = 0; i < len; i++)
-        cout << fiboarr[i] << " ";
+    showfibo(fiboarr, len);
     return 0;
 }
+
 int fibo(int n, array<int, ArSize> * fa)
 {
     int result;
-    if (n == 0 || n == 1)
-        result = 1;
-    else
-        result = fibo(n-1, fa) + fibo(n-2, fa);
+    if (n == 0 || n == 1)   result = 1;
+    else    result = fibo(n-1, fa) + fibo(n-2, fa);
     (*fa)[n] = result;
     //cout << "!!!!! n : " << n << "; result : " << result << endl;
     //cout << "fa[n]: " << (*fa)[n] << endl;
     return result;
 }
+
 void showfibo(array<int, ArSize> pa, int n)
 {
-    cout << "\n FiboArray: \n";
-    for (int i = 0; i < n; i++)
-        cout << pa[i] << " ";
+    for (int i = 0; i < n; i++) cout << pa[i] << " ";
     cout << endl;
 }
 // ===============================================================
@@ -117,6 +112,7 @@ int demo7_12()
     show(&expenses);
     return 0;
 }
+
 void fill(array<double, Seasons> * pa)
 {
     for (int i = 0; i < Seasons; i++)
@@ -125,6 +121,7 @@ void fill(array<double, Seasons> * pa)
         cin >> (*pa)[i];
     }
 }
+
 void show(array<double, Seasons> * pa)
 {
     double total = 0.0;
@@ -152,11 +149,11 @@ int demo7_11()
     display(List, SIZE);
     return 0;
 }
+
 void display(const string sa[], int n)
 {
     for (int i = 0; i < n; i++) cout << i+1 << ": " << sa[i] << endl;
 }
-
 // ===============================================================
 // 结构：角度转换为弧度
 int demo7_10()
@@ -174,6 +171,7 @@ int demo7_10()
     cout << "Done.\n";
     return 0;
 }
+
 polar rect_to_polar(rect pos)
 {
     polar trans;
@@ -181,6 +179,7 @@ polar rect_to_polar(rect pos)
     trans.angle = atan2(pos.y, pos.x);
     return trans;
 }
+
 void show_polar(polar pol)
 {
     const double pitodeg = 57.29578;
@@ -189,7 +188,6 @@ void show_polar(polar pol)
 }
 // ===============================================================
 // 传递字符串地址
-
 int demo7_9()
 {
     using namespace std;
@@ -207,6 +205,7 @@ int demo7_9()
     delete [] ps;
     return 0;
 }
+
 char * buildstr(char c, int n)
 {
     char * pstr = new char[n+1];
@@ -214,7 +213,6 @@ char * buildstr(char c, int n)
     while(n-- > 0) pstr[n] = c;
     return pstr;
 }
-
 // ===============================================================
 // 字符串参数
 int demo7_8()
@@ -229,8 +227,6 @@ int demo7_8()
     return 0;
 }
 
-// this function counts the number of ch characters
-// in the string str
  unsigned int c_in_str(const char * str, char ch)
 {
     unsigned int counter = 0;
@@ -241,12 +237,8 @@ int demo7_8()
     }
     return counter;
 }
-
-
-
 // ===============================================================
 // 数组区间
-
 int demo7_7()
 {
     int cookies[arrSize] = {1,2,4,8,16,32,64,128};
@@ -263,11 +255,8 @@ int sum_array(const int * begin, const int * end)
     for (pt = begin; pt != end; pt++)   total += *pt;
     return total;
 }
-
-
 // ===============================================================
 // 数组赋值/显示/修改
-
 int demo7_6()
 {
     int MAX = 5;
@@ -291,6 +280,7 @@ int demo7_6()
     cin.get();
     return 0;
 }
+
 int fill_arr(double ar[], int limit)
 {
     double temp;
@@ -311,18 +301,19 @@ int fill_arr(double ar[], int limit)
     }
     return i;
 }
+
 void show_arr(const double ar[], int n)
 {
     for (int i = 0; i <n; i++)
         cout << "Property #"<< (i + 1) << ": $" << ar[i] << endl;
 }
+
 void revalue(double r, double ar[], int n)
 {
     for (int i = 0; i < n; i++) ar[i] *= r;
 }
 // ===============================================================
 // 数组传参
-
 int demo7_5()
 {
     int cookies[ArSize] = {1,2,4,8,16,32,64,128};
@@ -336,6 +327,7 @@ int demo7_5()
         << (&cookies[i] == cookies + i) << endl;
     return 0;
 }
+
 int sum_arr(int arr[], int n)
 {
     int total = 0;
@@ -344,7 +336,6 @@ int sum_arr(int arr[], int n)
 }
 // ===============================================================
 // 多参数计算阶乘
-
 int demo7_4()
 {
     double total, choices;
@@ -371,7 +362,6 @@ long double prob(unsigned numbers, unsigned picks)
 }
 // ===============================================================
 // 多参数调用
-
 int demo7_3()
 {
     int times;
@@ -389,13 +379,13 @@ int demo7_3()
     cout << "The end.\n";
     return 0;
 }
+
 void n_chars(char c, int n)
 {
     while (n-- > 0) cout << c;
 }
 // ===============================================================
 // 多函数调用
-
 int demo7_2()
 {
     cheers(5);
@@ -411,13 +401,13 @@ void cheers(int n)
     for (int i = 0; i < n; i++) cout << "Cheers! ";
     cout << endl;
 }
+
 double cube(double x)
 {
     return x*x*x;
 }
 // ===============================================================
 // 函数定义-原型-调用
-
 int demo7_1()
 {
     char arr[ArSize];
